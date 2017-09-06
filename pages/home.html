@@ -9,11 +9,11 @@
 <button ng-click="goToTeam()" ng-disabled="counter == 0">Escolher os movimentos do time</button>
 
 <div> 
-    <button class='panel panel-default col-md-3 col-xs-8'
-        type="button" class="btn btn-link"
+    <button type="button" class='panel panel-default col-md-3 col-xs-8'
 	     ng-repeat="pokemon in pokemons | filter: search"
          ng-disabled="pokemon.isSelected == false && counter >= 6"
          ng-click="selectPokemon(pokemon)">
+    <!-- onclick="click()"> -->
 
         <p>Nome: {{ pokemon.name }}</p>
         <p>ID: {{ pokemon.id }}</p>

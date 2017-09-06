@@ -12,7 +12,7 @@
     </div>
     <p>Número de movimentos escolhidos: {{ pokemon.counter }}</p>
     <div>
-        <button class='panel panel-default col-md-3 col-xs-6'
+        <button type="button" class='panel panel-default col-md-3 col-xs-6'
 	        ng-repeat="move in pokemon.moves | filter: pokemon.search" 
             ng-disabled="!move.isSelected && pokemon.counter >= 4"
             ng-click="selectMove(pokemon, move)">
