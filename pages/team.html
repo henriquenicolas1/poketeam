@@ -1,0 +1,23 @@
+<h1> Pokémons escolhidos </h1>
+
+<div class="list-group">
+<div ng-repeat="pokemon in pokemons" class="list-group-item">
+    <p>ID: {{ pokemon.id }}</p>
+    <p>Nome: {{ pokemon.name }}</p>
+    <img src="{{ pokemon.img }}">
+    
+    <div class="form-group">
+        <input class="form-control" placeholder="Buscar" ng-model="pokemon.search">
+        <span class="glyphicon glyphicon-search form-control-feedback"></span>
+    </div>
+    <p>Número de movimentos escolhidos: {{ pokemon.counter }}</p>
+    <div>
+        <button class='panel panel-default col-md-3 col-xs-6'
+	        ng-repeat="move in pokemon.moves | filter: pokemon.search" 
+            ng-disabled="!move.isSelected && pokemon.counter >= 4"
+            ng-click="selectMove(pokemon, move)">
+            {{ move.name }}
+        </button>
+    </div>
+</div>
+</div>

@@ -1,0 +1,23 @@
+<h1 class="display-3">Pokémons</h1>
+<p>Escolha 6 Pokémons para seu time:</p>
+<div class="form-group">
+    <input class="form-control" placeholder="Buscar" ng-model="search">
+    <span class="glyphicon glyphicon-search form-control-feedback"></span>
+</div>
+
+<p><strong>Número de Pokémons escolhidos: {{ counter }}</strong></p>
+<button ng-click="goToTeam()" ng-disabled="counter == 0">Escolher os movimentos do time</button>
+
+<div> 
+    <button class='panel panel-default col-md-3 col-xs-8'
+        type="button" class="btn btn-link"
+	     ng-repeat="pokemon in pokemons | filter: search"
+         ng-disabled="pokemon.isSelected == false && counter >= 6"
+         ng-click="selectPokemon(pokemon)">
+
+        <p>Nome: {{ pokemon.name }}</p>
+        <p>ID: {{ pokemon.id }}</p>
+        <img src="{{ pokemon.img }}">
+        <p> {{ pokemon.state }} </p>
+    </button> 
+</div>

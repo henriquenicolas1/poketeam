@@ -1,0 +1,9 @@
+.selected-pokemon{
+  background:white;
+  border:1px solid black;
+}
+
+.normal-pokemon{
+  background:black;
+  border:1px solid black;
+}
